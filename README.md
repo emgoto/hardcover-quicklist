@@ -1,46 +1,43 @@
-# Getting Started with Create React App
+# Hardcover - Quicklist
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a little React app I've created to add books to lists in Hardcover! Contributions welcome.
 
-## Available Scripts
+## Getting started
 
-In the project directory, you can run:
+First time set-up:
+`nvm use && npm install`
 
-### `npm start`
+Regular development:
+`npm start`
 
-Runs the app in the development mode.\
+Runs the app in the development mode.
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+![](public/screenshot.png)
 
-### `npm test`
+## Example .csv format
+```
+Title,Author
+Harry Potter,J.K. Rowling
+Dune
+Foundation,Isaac Asimov
+Ender's Game,Orson Scott Card
+"Guns, Germs, and Steel: The Fates of Human Societies", Jared Diamond
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- The `Title,Author` row is optional
+- Book titles are compulsory, but authors are optional
+- Make sure to include quotation marks `"` around book titles with commas in them
 
-### `npm run build`
+## Potential pitfalls
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- If the book's name has some weird characters, it may fail to find the book
+- The app attempts to find the book with a similar title, with the most amount of readers
+    - e.g. a search for "Harry Potter" will return the first book in the Harry Potter series
+    - However this means if there is a really niche book, the search may end up returning a different, more popular book than the one you originally searched for
+    - To get around this, include the author as this should be more accurate
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Navigating the code
+- The main app lives in `src/App.tsx`
+- From there, I've broken down each of the steps into their own files inside of the `src/components` folder
+- Any GraphQL queries I make to Hardcover's API are in the `src/api` folder

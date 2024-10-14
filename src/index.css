@@ -1,13 +1,87 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  background-color: #111827;
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  color: white;
+
+  padding: 16px;
+  padding-top: 24px;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+a {
+  color: white;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 32px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 600px;
+}
+
+textarea,
+textarea::placeholder,
+input,
+input::placeholder {
+  background-color: black;
+  border: 1px solid grey;
+  border-radius: 4px;
+  color: white;
+}
+
+textarea,
+input,
+button {
+  max-width: 400px;
+}
+
+th,
+td {
+  text-align: left;
+}
+
+.app {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  gap: 48px;
+}
+
+.info {
+  font-size: 14px;
+}
+
+.userLists {
+  display: flex;
+  gap: 8px;
+}
+
+.foundBook {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
